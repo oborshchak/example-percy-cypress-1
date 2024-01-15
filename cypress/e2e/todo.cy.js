@@ -50,5 +50,9 @@ describe("TodoMVC", function () {
     cy.get(".toggle").click();
     cy.get(".todo-count").should("contain", "0 items left");
     cy.percySnapshot("Logo", { scope: ".logo_container" });
+
+    cy.get(".logo_container").compareSnapshot("logo-snap", {
+      errorThreshold: 0.1,
+    });
   });
 });
