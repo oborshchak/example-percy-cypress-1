@@ -138,7 +138,7 @@
       // console.log("DATA", data);
       if (data.length) {
         console.log("DISPLAY LOGO");
-        logo_container.innerHTML = '<img src="css/logo.png" />';
+        logo_container.innerHTML = '<img src="css/logo_dot.png" />';
       } else {
         console.log("Hide Logo");
         logo_container.innerHTML = "";
