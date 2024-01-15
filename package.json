@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "percy:cypress": "percy exec -- cypress run",
+    "percy:cypress": "cross-env INTEGRATION_FOLDER=cypress/e2e && percy exec -- cypress run --env type=actual",
     "start:server": "serve -l 8000 .",
     "test": "start-server-and-test start:server 8000 percy:cypress"
   },
@@ -9,12 +9,14 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "todomvc-app-css": "^2.4.2"
   },
   "devDependencies": {
     "@percy/cli": "^1.27.7",
     "@percy/cypress": "^3.1.2",
     "cypress": "^10.11.0",
+    "cypress-visual-regression": "^3.0.0",
     "serve": "^14.0.1",
     "start-server-and-test": "1.14.0"
   }
